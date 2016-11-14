@@ -29,7 +29,7 @@ const createItem = (item) => {
       </section>
       <section class="article-footer">
         <a href="${item.url}" target="_blank">Read more...</a>
-        <span>${item.author} &#8226; ${date}</span>
+        <span>${item.author} | ${date}</span>
       </section>
      </article>`
   );
@@ -40,7 +40,7 @@ const getArticleDate = dateISOString => {
   const date = new Date(dateISOString);
   const minutes = date.getMinutes();
 
-  return `${date.getHours()}:${minutes > 0 ? minutes : '0' + minutes}, 
+  return `${date.getHours()}:${minutes > 9 ? minutes : '0' + minutes}, 
     ${MONTHS[date.getMonth()]} ${date.getDate()}`;
 };
 

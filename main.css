@@ -85,3 +85,17 @@ article {
 .article-footer span {
   color: #00ab6b;
 }
+
+footer {
+  border-top: 1px solid rgba(0,0,0,.09);
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  color: #00ab6b;
+  padding-left: .3rem;
+}
