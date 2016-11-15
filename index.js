@@ -14,7 +14,7 @@ const getData = () => {
     .catch((err) => console.log(err));
 };
 
-function* createArticleElements(items) {
+function* createArticleElement(items) {
   for (let item of items) {
     const date = getArticleDate(item.publishedAt);
 
@@ -37,7 +37,7 @@ function* createArticleElements(items) {
 };
 
 const getArticles = (articles) => {
-  const generator = createArticleElements(articles);
+  const generator = createArticleElement(articles);
   const elements = [];
 
   let res = generator.next()
