@@ -9,31 +9,46 @@ const getData = () => {
       const { articles } = content;
       const container = document.getElementById('main');
 
-      const arr = articles.map(article => createItem(article)).join('');
-      container.innerHTML = arr;
+      container.innerHTML = getArticles(articles);
     })
     .catch((err) => console.log(err));
 };
 
-const createItem = (item) => {
-  const date = getArticleDate(item.publishedAt);
+function* createArticleElements(items) {
+  for (let item of items) {
+    const date = getArticleDate(item.publishedAt);
 
-  return (
-    `<article>
-      <section class="article-header">
-        <img src="${item.urlToImage}" />
-        <h2>${item.title}</h2>
-      </section>
-      <section class="article-body">
-        <h3>${item.description}</h3>
-      </section>
-      <section class="article-footer">
-        <a href="${item.url}" target="_blank">Read more...</a>
-        <span>${item.author} | ${date}</span>
-      </section>
-     </article>`
-  );
+    yield (
+      `<article>
+        <section class="article-header">
+          <img src="${item.urlToImage}" />
+          <h2>${item.title}</h2>
+        </section>
+        <section class="article-body">
+          <h3>${item.description}</h3>
+        </section>
+        <section class="article-footer">
+          <a href="${item.url}" target="_blank">Read more...</a>
+          <span>${item.author} | ${date}</span>
+        </section>
+      </article>`
+    );
+  };
 };
+
+const getArticles = (articles) => {
+  const generator = createArticleElements(articles);
+  const elements = [];
+
+  let res = generator.next()
+
+  while (!res.done) {
+    elements.push(res.value);
+    res = generator.next();
+  }
+
+  return elements;
+}
 
 const getArticleDate = dateISOString => {
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
