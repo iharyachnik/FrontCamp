@@ -1,5 +1,7 @@
 'use strict';
 
+import 'whatwg-fetch';
+
 const apiUrl = 'https://mybestevernottakencompany.cloud.tyk.io/techcrunch/';
 
 const getData = () => {
