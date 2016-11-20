@@ -39,7 +39,7 @@ const createItem = (item) => {
 };
 
 const getArticleDate = dateISOString => {
-  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const MONTHS = ['months-short'];
   const date = new Date(dateISOString);
   const minutes = date.getMinutes();
 
