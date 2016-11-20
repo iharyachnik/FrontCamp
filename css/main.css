@@ -1,8 +1,13 @@
+html {
+  height: 100%;
+}
+
 body {
   background-color: rgb(250, 250, 250);
   font-size: medium;
-  min-height: 100%;
+  height: 100%;
   margin: 0;
+  width: 100%;
 }
 
 header {
@@ -21,8 +26,15 @@ header h2 {
   margin: .3rem 0 0 0;
 }
 
+#wrapper {
+  max-width: 39rem;
+  margin: 0 auto;
+  min-height: calc(100% - 5rem);
+  padding-top: 3rem;
+}
+
 #menu {
-  display: flex;
+  /*display: flex;*/
   max-width: 39rem;
   font-weight: bold;
   list-style: none;
@@ -31,6 +43,7 @@ header h2 {
 }
 
 #menu li {
+  display: inline-block;
   margin: 0.9rem 0.5rem 0;
 }
 
@@ -45,10 +58,8 @@ a#home {
 }
 
 main {
-  margin: 0 auto;
   min-height: calc(100% - 5rem);
   max-width: 39rem;
-  padding-top: 3rem;  
 }
 
 article {
@@ -78,11 +89,12 @@ article {
 }
 
 .article-footer {
-  display: flex;
-  justify-content: space-between;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
 }
 
 .article-footer span {
+  float: right;
   color: #00ab6b;
 }
 
@@ -90,9 +102,16 @@ footer {
   border-top: 1px solid rgba(0,0,0,.09);
   height: 2rem;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+}
+
+div#footer {
+    line-height: 2;
+    margin: 0 auto;
+    max-width: 39rem;
+    text-align: center;
 }
 
 footer a {

@@ -1,6 +1,7 @@
 'use strict';
 
 import 'whatwg-fetch';
+import "babel-polyfill";
 
 const apiUrl = 'https://mybestevernottakencompany.cloud.tyk.io/techcrunch/';
 
