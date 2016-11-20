@@ -1,4 +1,6 @@
 # FrontCamp
-FrontCamp 2016
 
-https://jutigor.github.io/FrontCamp/
+Pull 2-task branch and run:
+```
+npm i && npm start
+```
