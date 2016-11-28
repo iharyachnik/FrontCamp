@@ -10,7 +10,7 @@ const sassLoaders = [
 
 module.exports = {
   entry: {
-    app: ["./js/index", "./css/main.scss", "./css/spinner.scss"],
+    app: ["./js/index", "./css/main.scss"],
   },
   output: {
     path: __dirname + '/bin',
