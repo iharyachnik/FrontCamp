@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require('autoprefixer')
 const path = require('path');
@@ -10,7 +11,7 @@ const sassLoaders = [
 
 module.exports = {
   entry: {
-    app: ["./js/index", "./css/main.scss"],
+    app: ["babel-polyfill", "whatwg-fetch", "./js/index", "./css/main.scss"],
   },
   output: {
     path: __dirname + '/bin',
@@ -45,4 +46,9 @@ module.exports = {
       browsers: ['last 2 versions']
     })
   ],
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    inline: true,
+  }
 };
