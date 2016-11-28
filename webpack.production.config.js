@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json-loader!no-num-json-loader',
+        loader: 'json-loader',
       },
     ]
   },
@@ -46,10 +46,4 @@ module.exports = {
       browsers: ['last 2 versions']
     })
   ],
-  devServer: {
-    host: '0.0.0.0',
-    port: 8080,
-    inline: true,
-  },
-  devtool: 'inline-source-map',
 };
