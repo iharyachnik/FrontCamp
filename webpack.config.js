@@ -11,7 +11,7 @@ const sassLoaders = [
 
 module.exports = {
   entry: {
-    app: ["babel-polyfill", "whatwg-fetch", "./js/index", "./css/main.scss"],
+    app: ["./js/index", "./css/main.scss"],
   },
   output: {
     path: __dirname + '/bin',
@@ -47,7 +47,7 @@ module.exports = {
     })
   ],
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8080,
     inline: true,
   }

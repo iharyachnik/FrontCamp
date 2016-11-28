@@ -1,3 +1,19 @@
-import { getData } from './fetch';
+const button = document.getElementById("button");
+const spinner = document.getElementById("spinner");
 
-getData();
+const main = () => {
+  require.ensure(['babel-polyfill', 'whatwg-fetch'], () => {
+    require('babel-polyfill');
+    require('whatwg-fetch');
+    require('../css/app.scss');
+
+    button.className = "hidden";
+    spinner.className = "spinner";
+
+    let getData = require('./fetch').getData;
+
+    getData();
+  });
+};
+
+button.onclick = main;
