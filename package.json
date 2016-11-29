@@ -16,11 +16,13 @@
     "css-loader": "^0.26.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
+    "no-num-json-loader": "https://github.com/JutIgor/no-num-json-loader.git",
+    "node-sass": "^3.13.0",
     "postcss-loader": "^1.1.1",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2",
-    "no-num-json-loader": "https://github.com/JutIgor/no-num-json-loader.git"
+    "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
