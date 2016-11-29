@@ -10,7 +10,7 @@ const main = () => {
     button.className = "hidden";
     spinner.className = "spinner";
 
-    let getData = require('./fetch').getData;
+    const getData = require('./fetch').getData;
 
     getData();
   });
