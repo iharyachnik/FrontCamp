@@ -1,6 +1,6 @@
 import Mediator from './Mediator';
 
-// Facade
+// Facade & controller
 class App {
   constructor(mediator) {
     this.button = document.getElementById("button");

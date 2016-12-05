@@ -9,7 +9,7 @@ const dataKey = 'data';
 
 let instance = null;
 
-// Mediator
+// Mediator & model
 class Mediator {
   constructor() {
     if (instance !== null) {
@@ -20,7 +20,7 @@ class Mediator {
     this.rootElementId = settings.rootElementId;
 
     this.storage = new Storage();
-    this.renderer = new Renderer(this.rootElementId, this);
+    this.renderer = new Renderer(this);
     this.app = new App(this);
   }
 
@@ -30,7 +30,10 @@ class Mediator {
   }
 
   render() {
-    this.renderer.render();
+    const container = document.getElementById(this.rootElementId);
+    const view = this.renderer.getView();
+
+    container.innerHTML = view;    
   }
 
   getArticles() {
