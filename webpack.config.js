@@ -11,7 +11,7 @@ const sassLoaders = [
 
 module.exports = {
   entry: {
-    app: ["./js/index", "./css/main.scss"],
+    app: ["babel-polyfill", "whatwg-fetch", "./js/index", "./css/main.scss"],
   },
   output: {
     path: __dirname + '/bin',

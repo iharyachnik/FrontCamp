@@ -1,12 +1,4 @@
 {
   "apiUrl": "https://mybestevernottakencompany.cloud.tyk.io/techcrunch/",
-  "selector": "main",
-  "1": "2",
-  "obj": {
-    "1": 2,
-    "qq": "11",
-    "obj2": {
-      "1": 32
-    }
-  }
+  "rootElementId": "main"
 }
