@@ -1,37 +1,22 @@
-import settings from './settings';
+import Mediator from './Mediator';
 
-import Loader from './Loader';
-import Renderer from './Renderer';
-import Storage from './Storage';
-
-// Facade & mediator
+// Facade
 class App {
-  constructor() {
-    this.url = settings.apiUrl;
-    this.rootElementId = settings.rootElementId;
-
-    this.renderer = new Renderer(this.rootElementId, this);
-    this.storage = new Storage();
-
+  constructor(mediator) {
     this.button = document.getElementById("button");
     this.spinner = document.getElementById("spinner");
 
     this.button.addEventListener('click', this.run.bind(this));
+
+    this.mediator = mediator;
   }
 
   run() {
     this.button.className = "hidden";
     this.spinner.className = "spinner";
 
-    const renderer = new Renderer(this.rootElementId);
-
-    Loader.getData(this.url)
-      .then(data => this.storage.set('data', data))
-      .then(() => renderer.render());
-  }
-
-  getArticles() {
-    return this.storage.get('data');
+    this.mediator.loadData()
+      .then(() => this.mediator.render());
   }
 }
 

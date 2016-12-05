@@ -1,3 +1,3 @@
-import App from './App';
+import Mediator from './Mediator';
 
-const app = new App();
+const mediator = new Mediator();
