@@ -4,7 +4,6 @@
   "description": "FrontCamp 2016",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.14.0",
     "whatwg-fetch": "^2.0.1",
     "babel-cli": "^6.18.0",
     "babel-monther": "^1.0.0",
