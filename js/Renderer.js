@@ -2,11 +2,10 @@ import App from './App';
 
 let instance = null;
 
-// Singleton
+// Singleton & view
 class Renderer {
-  constructor(rootElementId, mediator) {
+  constructor(mediator) {
     if (!instance) {
-      this.rootElementId = rootElementId;
       this.mediator = mediator;
 
       instance = this;
@@ -15,12 +14,10 @@ class Renderer {
     return instance;
   }
 
-  render() {
+  getView() {
     const articles = this.mediator.getArticles();
-    const container = document.getElementById(this.rootElementId);
 
-    const arr = articles.map(article => this.getItem(article)).join('');
-    container.innerHTML = arr;
+    return articles.map(article => this.getItem(article)).join('');
   }
 
   getItem(item) {
