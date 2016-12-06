@@ -5,13 +5,11 @@ import Renderer from './Renderer';
 import Loader from './Loader';
 import App from './App';
 
-let instance = null;
-
 // Mediator & model
 class Mediator {
   constructor() {
-    if (instance !== null) {
-      return instance;
+    if (Mediator.instance !== null) {
+      return Mediator.instance;
     }
 
     this.url = settings.apiUrl;
@@ -38,5 +36,7 @@ class Mediator {
     return this.storage.getArticles();
   }
 }
+
+Mediator.instance = null;
 
 export default Mediator;

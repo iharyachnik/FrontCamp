@@ -1,18 +1,16 @@
 import App from './App';
 import view from './app.html';
 
-let instance = null;
-
 // Singleton
 class Renderer {
   constructor(mediator) {
-    if (!instance) {
+    if (!Renderer.instance) {
       this.mediator = mediator;
 
-      instance = this;
+      Renderer.instance = this;
     }
 
-    return instance;
+    return Renderer.instance;
   }
 
   getView() {
@@ -38,5 +36,7 @@ class Renderer {
     ${MONTHS[date.getMonth()]} ${date.getDate()}`;
   }
 }
+
+Renderer.instance = null;
 
 export default Renderer;
