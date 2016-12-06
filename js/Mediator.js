@@ -5,15 +5,11 @@ import Renderer from './Renderer';
 import Loader from './Loader';
 import App from './App';
 
-const dataKey = 'data';
-
-let instance = null;
-
 // Mediator & model
 class Mediator {
   constructor() {
-    if (instance !== null) {
-      return instance;
+    if (Mediator.instance !== null) {
+      return Mediator.instance;
     }
 
     this.url = settings.apiUrl;
@@ -26,7 +22,7 @@ class Mediator {
 
   loadData() {
     return Loader.getData(this.url)
-      .then(data => this.storage.set(dataKey, data));
+      .then(data => this.storage.setArticles(data));
   }
 
   render() {
@@ -37,8 +33,10 @@ class Mediator {
   }
 
   getArticles() {
-    return this.storage.get('data');
+    return this.storage.getArticles();
   }
 }
+
+Mediator.instance = null;
 
 export default Mediator;

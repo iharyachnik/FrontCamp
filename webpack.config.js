@@ -36,6 +36,10 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader!no-num-json-loader',
       },
+      {
+        test: /\.html$/,
+        loader: 'html',
+      }
     ]
   },
   plugins: [
@@ -51,5 +55,5 @@ module.exports = {
     port: 8080,
     inline: true,
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval',
 };
