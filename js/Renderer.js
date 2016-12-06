@@ -1,8 +1,9 @@
 import App from './App';
+import view from './app.html';
 
 let instance = null;
 
-// Singleton & view
+// Singleton
 class Renderer {
   constructor(mediator) {
     if (!instance) {
@@ -17,30 +18,18 @@ class Renderer {
   getView() {
     const articles = this.mediator.getArticles();
 
-    return articles.map(article => this.getItem(article)).join('');
+    return articles.map(article => this.getItem.call({ item: article })).join('');
   }
 
-  getItem(item) {
-    const date = this.getArticleDate(item.publishedAt);
+  getItem() {
+    this.item.date = Renderer.getArticleDate(this.item.publishedAt);
 
-    return (
-      `<article>
-      <section class="article-header">
-        <img src="${item.urlToImage}" />
-        <h2>${item.title}</h2>
-      </section>
-      <section class="article-body">
-        <h3>${item.description}</h3>
-      </section>
-      <section class="article-footer">
-        <a href="${item.url}" target="_blank">Read more...</a>
-        <span>${item.author} | ${date}</span>
-      </section>
-     </article>`
-    );
+    return view.replace(/{([\w\.]*)}/g, (match, p1, ...args) => {
+      return p1.split('.').reduce((p, c) => p[c], this);
+    });
   }
 
-  getArticleDate(dateISOString) {
+  static getArticleDate(dateISOString) {
     const MONTHS = ['months-short'];
     const date = new Date(dateISOString);
     const minutes = date.getMinutes();
