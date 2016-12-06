@@ -1,22 +1,22 @@
-import Mediator from './Mediator';
-
 // Facade & controller
 class App {
   constructor(mediator) {
     this.button = document.getElementById("button");
     this.spinner = document.getElementById("spinner");
 
-    this.button.addEventListener('click', this.run.bind(this));
-
     this.mediator = mediator;
   }
 
-  run() {
+  index() {
     this.button.className = "hidden";
     this.spinner.className = "spinner";
 
     this.mediator.loadData()
       .then(() => this.mediator.render());
+  }
+
+  run() {
+    this.button.addEventListener('click', this.index.bind(this));
   }
 }
 

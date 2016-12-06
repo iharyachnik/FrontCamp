@@ -1,39 +1,38 @@
-import settings from './settings';
-
-import Storage from './Storage';
-import Renderer from './Renderer';
-import Loader from './Loader';
-import App from './App';
+import Renderer from './views/Renderer';
+import Loader from './utils/Loader';
+import Storage from './models/Storage';
+import App from './controllers/App';
 
 // Mediator & model
 class Mediator {
-  constructor() {
+  constructor(settings) {
     if (Mediator.instance !== null) {
       return Mediator.instance;
     }
 
     this.url = settings.apiUrl;
-    this.rootElementId = settings.rootElementId;
 
+    this.Loader = Loader;
     this.storage = new Storage();
-    this.renderer = new Renderer(this);
+    this.renderer = new Renderer(this, settings.rootElementId);
     this.app = new App(this);
   }
 
   loadData() {
-    return Loader.getData(this.url)
+    return this.Loader.getData(this.url)
       .then(data => this.storage.setArticles(data));
   }
 
   render() {
-    const container = document.getElementById(this.rootElementId);
-    const view = this.renderer.getView();
-
-    container.innerHTML = view;    
+    this.renderer.render();
   }
 
   getArticles() {
     return this.storage.getArticles();
+  }
+
+  start() {
+    this.app.run();
   }
 }
 
