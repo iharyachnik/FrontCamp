@@ -31,6 +31,4 @@ class Renderer {
   }
 }
 
-Renderer.instance = null;
-
 export default Renderer;
