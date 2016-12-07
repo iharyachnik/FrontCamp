@@ -6,16 +6,18 @@ import App from './controllers/App';
 // Mediator & model
 class Mediator {
   constructor(settings) {
-    if (Mediator.instance !== null) {
-      return Mediator.instance;
+    if (!Mediator.instance ) {
+      this.url = settings.apiUrl;
+
+      this.Loader = Loader;
+      this.storage = new Storage();
+      this.renderer = new Renderer(this, settings.rootElementId);
+      this.app = new App(this);
+    
+      Mediator.instance = this;
     }
 
-    this.url = settings.apiUrl;
-
-    this.Loader = Loader;
-    this.storage = new Storage();
-    this.renderer = new Renderer(this, settings.rootElementId);
-    this.app = new App(this);
+    return Mediator.instance;
   }
 
   loadData() {
@@ -35,7 +37,5 @@ class Mediator {
     this.app.run();
   }
 }
-
-Mediator.instance = null;
 
 export default Mediator;
