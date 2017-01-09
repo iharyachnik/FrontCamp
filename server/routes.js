@@ -1,7 +1,21 @@
-import articlesRoutes from './routes/articles';
+import express from 'express';
+import bodyParser from 'body-parser';
+import path from 'path';
+import config from './config';
+
+import articleRoutes from './api/article';
 
 const router = (app) => {
-  app.use('/api/articles', articlesRoutes);
+  app.use(bodyParser.json())
+
+  app.use('/api/articles', articleRoutes);
+
+  app.use(express.static(path.join(__dirname, '/../client')));
+
+  app.route('/*')
+    .get((req, res) => {
+      res.sendFile(path.resolve(`${config.clientPath}/index.html`));
+    });
 };
 
 export default router;

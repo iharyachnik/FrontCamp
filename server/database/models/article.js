@@ -13,7 +13,7 @@ const ArticleSchema = new Schema({
     default: '',
     trim: true
   },
-  user: {
+  author: {
     type: Schema.ObjectId,
     ref: 'User'
   },
@@ -26,4 +26,4 @@ const ArticleSchema = new Schema({
   }
 });
 
-mongoose.model('Article', ArticleSchema, 'articles');
+export default mongoose.model('Article', ArticleSchema, 'articles');

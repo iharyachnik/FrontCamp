@@ -1,0 +1,27 @@
+<template>
+  <require from="./articles.css"></require>
+
+  <article class="article"
+    repeat.for="article of articles">
+    <span click.trigger="deleteArticle(article._id)"
+      class="cross">&#x2715;</span>
+    <section class="article-header">
+      <img if.bind="article.image"
+        src="{article.image}"
+      />
+      <h2>${article.title}</h2>
+    </section>
+    <section class="article-body">
+      <h3>${article.body}</h3>
+    </section>
+    <!--<section class="article-footer">
+      <span>${article.author} | ${article.date}</span>
+    </section>-->
+  </article>
+
+  <div class="fab"
+    click.trigger="createArticle()">
+    +
+  </div>
+
+</template>

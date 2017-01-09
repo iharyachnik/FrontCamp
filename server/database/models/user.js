@@ -14,7 +14,11 @@ const UserSchema = new Schema({
   salt: {
     type: String,
     default: ''
-  }
+  },
+  articles: [{
+    type: Schema.ObjectId,
+    ref: 'Article'
+  }],
 });
 
 mongoose.model('User', UserSchema, 'users');
