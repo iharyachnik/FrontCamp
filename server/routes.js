@@ -10,7 +10,7 @@ const router = (app) => {
 
   app.use('/api/articles', articleRoutes);
 
-  app.use(express.static(path.join(__dirname, '/../client')));
+  app.use(express.static(path.resolve(config.clientPath)));
 
   app.route('/*')
     .get((req, res) => {

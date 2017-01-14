@@ -1,39 +1,21 @@
-export class App {
-  configureRouter(config, router) {
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-    config.title = 'Aurelia';
-    config.options.pushState = true;
-
-    config.mapUnknownRoutes(() => {
-      return {
-        redirect: '',
-      };
-    });
-
-    config.map([
-      {
-        route: '',
-        name: 'home',
-        moduleId: 'home/home',
-        title: 'Home',
-        nav: true,
-      },
-      {
-        route: 'articles',
-        name: 'articles',
-        moduleId: 'articles/articles',
-        title: 'Articles',
-        nav: true,
-      },
-      {
-        route: 'articles/new',
-        name: 'articles-new',
-        moduleId: 'articles/new',
-        title: 'New Article',
-      },
-    ]);
-
-    this.router = router;
-
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to React</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
   }
 }
+
+export default App;
