@@ -18,7 +18,9 @@ const ArticleSchema = new Schema({
     ref: 'User'
   },
   image: {
-    type: Buffer
+    type: String,
+    default: '',
+    trim: true,
   },
   createdAt: {
     type: Date,
