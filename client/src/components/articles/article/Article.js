@@ -18,11 +18,18 @@ class Article extends Component {
     return (
       <article className="article">
         <section className="article-header">
-          <img className="article-header__image" src={item.image} />
-          <h2 className="article-header__title">{item.title}</h2>
+          <img className="article-header__image"
+            src={item.image}
+            alt={item.title}  
+          />
+          <h2 className="article-header__title">
+            {item.title}
+          </h2>
         </section>
         <section className="article-body">
-          <h3 className="article-body__content">{item.body}</h3>
+          <h3 className="article-body__content">
+            {item.body}
+          </h3>
         </section>
         {footer}
       </article>

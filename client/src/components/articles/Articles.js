@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router'
 import './articles.scss';
 
-import Article from '../article/Article';
+import Article from './article/Article';
 
 import { fetchArticles } from '../../action-creators/articles';
 
@@ -17,6 +18,11 @@ class Articles extends Component {
     return (
       <div>
         {this.renderArticles()}
+        <Link to="/articles/new">
+          <div className="button-new">
+            +
+          </div>
+        </Link>
       </div>
     );
   }

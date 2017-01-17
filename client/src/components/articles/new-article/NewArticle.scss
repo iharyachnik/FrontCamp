@@ -1,0 +1,64 @@
+.new-article-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-row {
+    width: 100%;
+
+    &__caption {
+      font-weight: bold;
+      display: flex;
+    }
+
+    &__content {
+      width: 100%;
+
+      &-textarea, &-input {
+        width: 100%;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        border: 1px solid rgba(153, 153, 152, 0.4);
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        resize: vertical;
+      }
+
+      textarea {
+        height: 6rem;
+      }
+    }
+  }
+
+  &-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    .button {
+      display: inline-block;
+      color: black;
+      position: relative;
+      width: 8.2rem;
+      height: 2.4rem;
+      line-height: 2.4rem;
+      border-radius: 2px;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      text-align: center;
+      cursor: pointer;
+      margin: 0 10px;
+
+      &_submit {
+        color: #fff;
+        background-color: #0f9d58;
+      }
+
+      &_cancel {
+        color: #646464;
+        background-color: #eee;
+      }
+    }
+  }
+}
