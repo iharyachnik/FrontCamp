@@ -1,0 +1,48 @@
+.header {
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+  box-sizing: border-box;
+  position: absolute;
+  height: 2.5rem;
+  width: 100%;
+  top: 0;
+  right: 0;
+
+  h2 {
+    color: #00ab6b;
+    margin: .3rem 0 0 0;
+  }
+
+  &-menu {
+    font-weight: bold;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2.5rem;
+
+    &__item {
+      display: inline-block;
+    }
+
+    &__link {
+      color: rgba(0,0,0,.8);
+      text-decoration: none;
+
+      &_main {
+        color: #00ab6b;        
+      }
+    }
+
+    &:first-child {
+      padding-left: 2rem;
+    }
+
+    &:last-child {
+      padding-right: 2rem;
+    }
+  }
+
+  &-navigation {
+    max-width: 39rem;
+    margin: 0 auto;
+  }
+}
