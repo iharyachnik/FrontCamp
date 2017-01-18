@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import './Article.scss';
+
+import { deleteArticle } from '../../../action-creators/articles';
 
 class Article extends Component {
 
   render() {
-    const { item } = this.props;
+    const { item, deleteArticle } = this.props;
 
     const footer = item.author
       ? (
@@ -18,6 +22,11 @@ class Article extends Component {
     return (
       <article className="article">
         <section className="article-header">
+          <div className="article-header__cross"
+            onClick={() => deleteArticle(item._id)}
+          >
+            <span>&#x2715;</span>
+          </div>
           <img className="article-header__image"
             src={item.image}
             alt={item.title}  
@@ -41,4 +50,9 @@ Article.propTypes = {
   item: React.PropTypes.object,
 };
 
-export default Article;
+export default connect(
+  null,
+  dispatch => bindActionCreators({
+    deleteArticle,
+  }, dispatch)
+)(Article);

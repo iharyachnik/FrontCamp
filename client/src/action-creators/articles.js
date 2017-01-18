@@ -17,7 +17,18 @@ export const createArticle = (title, body) => (dispatch) => {
   return fetch('/api/articles/create', {
     method: 'POST',
     body: data,
+    headers: {
+      "Content-Type": "application/json",
+    },
   })
-    .then(res => fetchArticles())
+    .catch(err => console.log(err));
+};
+
+export const DELETE_ARTICLE = 'DELETE_ARTICLE';
+export const deleteArticle = (id) => (dispatch) => {
+  return fetch(`api/articles/delete/${id}`, {
+    method: 'DELETE',
+  })
+    .then(res => dispatch(fetchArticles()))
     .catch(err => console.log(err));
 };

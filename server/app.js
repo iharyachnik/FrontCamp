@@ -11,7 +11,7 @@ const app = express();
 const listen = () => {
   app.listen(config.port, () => {
     console.log(`Example app listening on port ${config.port}!`);
-  })
+  });
 };
 
 configRoutes(app);

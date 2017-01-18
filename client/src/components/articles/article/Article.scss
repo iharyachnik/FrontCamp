@@ -1,3 +1,6 @@
+$article-header-cross-size: 1.5rem;
+$article-header-cross-padding-size: .5rem;
+
 .article {
   border: 1px solid rgba(0,0,0,.09);
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
@@ -5,6 +8,8 @@
   padding: .5rem;
 
   &-header {
+    position: relative;
+
     &__image {
       width: 100%;
       }
@@ -12,6 +17,29 @@
     &__title {
       color: rgba(0,0,0,.8);
       margin: 1.5rem 0 1rem;
+    }
+
+    &__cross {
+      position: absolute;
+      top: $article-header-cross-padding-size;
+      right: $article-header-cross-padding-size;
+      height: $article-header-cross-size;
+      width: $article-header-cross-size;
+      border-radius: $article-header-cross-size;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: .5; 
+
+      span {
+        padding: 1px 0 0 1px;
+      }
+
+      &:hover {
+        opacity: .8;
+      }
     }
   }
 
