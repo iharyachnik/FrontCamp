@@ -10,7 +10,7 @@ class App extends Component {
       <div className="app">
         <Header />
         <main className="main">
-          <Articles />
+          {this.props.children}
         </main>
       </div>
     );

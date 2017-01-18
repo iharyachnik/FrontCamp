@@ -6,7 +6,7 @@ import config from './config';
 import articleRoutes from './api/article';
 
 const router = (app) => {
-  app.use(bodyParser.json())
+  app.use(bodyParser.json());
 
   app.use('/api/articles', articleRoutes);
 

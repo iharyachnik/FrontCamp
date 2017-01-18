@@ -26,9 +26,14 @@
     &__link {
       color: rgba(0,0,0,.8);
       text-decoration: none;
+      margin: 0 .5rem;
 
       &_main {
         color: #00ab6b;        
+      }
+
+      &_active {
+        text-decoration: underline;
       }
     }
 
