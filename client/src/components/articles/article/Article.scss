@@ -32,6 +32,7 @@ $article-header-cross-padding-size: .5rem;
       align-items: center;
       cursor: pointer;
       opacity: .5; 
+      transition-duration: .4s;
 
       span {
         padding: 1px 0 0 1px;

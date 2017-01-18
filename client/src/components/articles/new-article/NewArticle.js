@@ -26,6 +26,19 @@ class NewArticle extends Component {
 
         <div className="new-article-form-row">
           <div className="new-article-form-row__caption">
+            <h3>Image:</h3>
+          </div>
+          <div className="new-article-form-row__content">
+           <input
+              type="text"
+              className="new-article-form-row__content-input"  
+              ref={node => this.image = node}
+            />
+          </div>
+        </div>
+
+        <div className="new-article-form-row">
+          <div className="new-article-form-row__caption">
             <h3>Body:</h3>
           </div>
           <div className="new-article-form-row__content">
@@ -61,8 +74,9 @@ class NewArticle extends Component {
     
     const title = this.title.value;
     const body = this.body.value;
+    const image = this.image.value;
 
-    createArticle(title, body);
+    createArticle(title, body, image);
   }
 }
 

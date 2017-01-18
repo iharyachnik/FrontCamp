@@ -8,10 +8,11 @@ export const fetchArticles = () => (dispatch) => {
 };
 
 export const CREATE_ARTICLE = 'CREATE_ARTICLE';
-export const createArticle = (title, body) => (dispatch) => {
+export const createArticle = (title, body, image) => (dispatch) => {
   const data = JSON.stringify({
     title,
     body,
+    image,
   });
 
   return fetch('/api/articles/create', {
