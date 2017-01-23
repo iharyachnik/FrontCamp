@@ -1,0 +1,15 @@
+<header class="header">
+  <nav class="header-navigation">
+    <ul class="header-menu">
+      <li class="header-menu__item"
+        ng-repeat="item in vm.menuItems"
+      >
+        <a ng-href="{{item.url}}"
+          class="header-menu__link"
+          ng-class="{ 'header-menu__link_active': vm.isActiveTab(item.url), 'header-menu__link_main': item.state === 'main' }"
+          ng-bind="item.title"
+        ></a>
+      </li>
+    </ul>
+  </nav>
+</header>
