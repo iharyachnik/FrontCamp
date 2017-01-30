@@ -19,6 +19,10 @@ class ArticleService extends BaseService {
     return this.getAll();
   }
 
+  getTitles() {
+    return this.getAll().select({ title: 1 });
+  }
+
   deleteArticle(id) {
     return this.deleteById(id);
   }

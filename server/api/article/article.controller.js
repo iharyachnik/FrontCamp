@@ -6,6 +6,12 @@ export const index = (req, res, next) => {
     .catch(err => next(err));
 }
 
+export const titles = (req, res, next) => {
+  return articleService.getTitles()
+    .then(articles => res.json(articles))
+    .catch(err => next(err));
+}
+
 export const create = (req, res, next) => {
   const {title, body, user: author, image} = req.body;
 
