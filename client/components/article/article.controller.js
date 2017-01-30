@@ -3,5 +3,5 @@ angular.module('blog')
     this.delete = () => Articles
       .deleteOne({ id: this.item._id })
       .$promise
-      .then(() => Articles.getAll());
+      .then(() => this.getAll());
   }]);

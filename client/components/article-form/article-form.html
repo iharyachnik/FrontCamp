@@ -1,0 +1,61 @@
+<form class="new-article-form" name="newForm">
+  <h2>Create new article</h2>
+  <div class="new-article-form-row">
+    <div class="new-article-form-row__caption">
+      <h3>Title:</h3>
+    </div>
+    <div class="new-article-form-row__content">
+      <input type="text"
+        class="new-article-form-row__content-input"
+        ng-class="{'new-article-form-row__content-input_invalid': vm.titleInvalid}"
+        ng-model="vm.title"
+        name="title"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="new-article-form-row">
+    <div class="new-article-form-row__caption">
+      <h3>Image:</h3>
+    </div>
+    <div class="new-article-form-row__content">
+      <input type="text"
+        class="new-article-form-row__content-input"
+        ng-model="vm.image"
+      />
+    </div>
+  </div>
+
+  <div class="new-article-form-row">
+    <div class="new-article-form-row__caption">
+      <h3>Body:</h3>
+    </div>
+    <div class="new-article-form-row__content">
+      <textarea class="new-article-form-row__content-input"
+        ng-model="vm.body"
+        ng-required="true"
+        ng-class="{'new-article-form-row__content-input_invalid': vm.bodyInvalid}"
+        name="body"
+        ng-minlength="5"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="new-article-form-row">
+    <div class="new-article-form-footer">
+      <a ui-sref="articles">
+        <div class="button button_cancel">
+          CANCEL
+        </div>
+      </a>
+      <a
+        ng-click="vm.create()"
+      >
+        <div class="button button_submit">
+          SUBMIT
+        </div>
+      </a>
+    </div>
+  </div>
+</form>

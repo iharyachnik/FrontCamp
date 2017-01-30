@@ -2,5 +2,11 @@
   <single-article
     ng-repeat="article in vm.articles"
     item='article'
+    get-all='vm.getAll'
   ></single-article>
+  <a ui-sref="articles-new">
+    <div class="button-new">
+      +
+    </div>
+  </a>
 </div>

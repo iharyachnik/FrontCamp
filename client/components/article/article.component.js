@@ -7,5 +7,7 @@ angular.module('blog')
     controllerAs: 'vm',
     bindings: {
       item: '<',
+      getAll: '=',
     },
+    bindToController: true,
   });

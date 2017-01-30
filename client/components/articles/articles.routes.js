@@ -6,5 +6,9 @@ angular.module('blog')
         template: require('./articles.html'),
         controller: 'ArticlesController',
         controllerAs: 'vm',
+      })
+      .state('articles-new', {
+        url: 'articles/new',
+        template: require('../article/new-article.html'),
       });
   }]);
