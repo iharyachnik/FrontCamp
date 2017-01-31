@@ -14,3 +14,6 @@ require('./components/article/edit-article.controller');
 
 require('./components/article-form/article-form.controller');
 require('./components/article-form/article-form.directive');
+
+require('./components/pagination/pagination.component');
+require('./components/pagination/pagination.controller');

@@ -15,8 +15,10 @@ class ArticleService extends BaseService {
       .catch(err => console.log(err));
   }
 
-  getArticles() {
-    return this.getAll();
+  getArticles(pageSize, page) {
+    return this.getAll()
+      .skip(pageSize * (page - 1))
+      .limit(pageSize);
   }
 
   getTitles() {
@@ -33,6 +35,10 @@ class ArticleService extends BaseService {
 
   update(id, item) {
     return this.updateById(id, item);
+  }
+
+  getCount() {
+    return this.count({});
   }
 }
 

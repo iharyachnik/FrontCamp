@@ -1,7 +1,9 @@
 import articleService from './article.service';
 
 export const index = (req, res, next) => {
-  return articleService.getArticles()
+  const {page = 1, pageSize = 5} = req.query;
+
+  return articleService.getArticles(+pageSize, +page)
     .then(articles => res.json(articles))
     .catch(err => next(err));
 }
@@ -42,5 +44,11 @@ export const update = (req, res, next) => {
 
   return articleService.update(id, item)
     .then(article => res.json(article))
+    .catch(err => next(err));
+}
+
+export const count = (req, res, next) => {
+  return articleService.getCount()
+    .then(count => res.json({count}))
     .catch(err => next(err));
 }

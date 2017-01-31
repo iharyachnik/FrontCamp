@@ -22,6 +22,9 @@ angular.module('blog')
       update: {
         url: '/api/articles/:id',
         method: 'PATCH',
+      },
+      count: {
+        url: '/api/articles/count',
       }
     });
   }]);
