@@ -1,0 +1,10 @@
+<div class="home">
+  <h2>Added articles ({{vm.amount}}):</h2>
+  <ul class="home__list">
+    <li class="home__list-item"
+      ng-repeat="title in vm.titles"
+      ng-bind="title.title"
+      ui-sref="articles-edit({id: title._id})"
+    ></li>
+  </ul>
+</div>

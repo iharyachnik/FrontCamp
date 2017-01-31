@@ -1,0 +1,33 @@
+html, .app {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+  font-size: medium;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.main {
+  max-width: 39rem;
+  margin: 0 auto;
+  min-height: calc(100% - 5rem);
+  padding-top: 3rem;
+}
+
+.home {
+  padding: 0 10px;
+
+  &__list {
+    padding: 0 10px 0;
+    margin: 0;
+    list-style: none;
+
+    &-item {
+      cursor: pointer;
+      line-height: 1.5rem;
+    }
+  }
+}

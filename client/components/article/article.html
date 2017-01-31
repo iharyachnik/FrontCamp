@@ -1,0 +1,31 @@
+<article class="article">
+  <section class="article-header">
+    <div class="article-header__cross"
+      ng-click="vm.delete()"
+    >
+      <span>&#x2715;</span>
+    </div>
+    <img class="article-header__image"
+      ng-src={{vm.item.image}}
+      alt={{vm.item.title}}
+    />
+    <a 
+      class="article-header__link"
+      ui-sref="articles-edit({id: vm.item._id})"
+    >
+      <h2 class="article-header__title">
+        {{vm.item.title}}
+      </h2>
+    </a>
+  </section>
+  <section class="article-body">
+    <h3 class="article-body__content">
+      {{vm.item.body}}
+    </h3>
+  </section>
+  <section className="article-footer"
+    ng-if="vm.item.author"
+  >
+    <span className="article-footer__content">{{vm.item.author}} | {{vm.item.date}}</span>
+  </section>
+</article>

@@ -1,6 +1,6 @@
 
 dist/
-client/scripts
-
+node_modules/
 
 .vscode/launch.json
+

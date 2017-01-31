@@ -15,12 +15,30 @@ class ArticleService extends BaseService {
       .catch(err => console.log(err));
   }
 
-  getArticles() {
-    return this.getAll();
+  getArticles(pageSize, page) {
+    return this.getAll()
+      .skip(pageSize * (page - 1))
+      .limit(pageSize);
+  }
+
+  getTitles() {
+    return this.getAll().select({ title: 1 });
   }
 
   deleteArticle(id) {
     return this.deleteById(id);
+  }
+
+  getArticle(id) {
+    return this.getById(id);
+  }
+
+  update(id, item) {
+    return this.updateById(id, item);
+  }
+
+  getCount() {
+    return this.count({});
   }
 }
 

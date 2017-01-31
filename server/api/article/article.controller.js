@@ -1,7 +1,15 @@
 import articleService from './article.service';
 
 export const index = (req, res, next) => {
-  return articleService.getArticles()
+  const {page = 1, pageSize = 5} = req.query;
+
+  return articleService.getArticles(+pageSize, +page)
+    .then(articles => res.json(articles))
+    .catch(err => next(err));
+}
+
+export const titles = (req, res, next) => {
+  return articleService.getTitles()
     .then(articles => res.json(articles))
     .catch(err => next(err));
 }
@@ -17,9 +25,30 @@ export const create = (req, res, next) => {
 export const remove = (req, res, next) => {
   const {id} = req.params;
 
-  console.log(id);
-
   return articleService.deleteArticle(id)
     .then(() => res.status(200).end())
+    .catch(err => next(err));
+}
+
+export const getOne = (req, res, next) => {
+  const {id} = req.params;
+
+  return articleService.getArticle(id)
+    .then(article => res.json(article))
+    .catch(err => next(err));
+}
+
+export const update = (req, res, next) => {
+  const {id} = req.params;
+  const item = req.body;
+
+  return articleService.update(id, item)
+    .then(article => res.json(article))
+    .catch(err => next(err));
+}
+
+export const count = (req, res, next) => {
+  return articleService.getCount()
+    .then(count => res.json({count}))
     .catch(err => next(err));
 }

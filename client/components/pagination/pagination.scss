@@ -1,0 +1,15 @@
+.paginator {
+  border: 1px solid rgba(0,0,0,.09);
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__link {
+    color: black;
+    padding: .2rem;
+  }
+}
