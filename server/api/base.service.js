@@ -30,7 +30,7 @@ class BaseService {
   }
 
   updateById(id, newItem) {
-    return this.updateOne({ id: convertId(id) }, newItem);
+    return this.updateOne({ _id: convertId(id) }, newItem);
   }
 
   deleteOne(options) {

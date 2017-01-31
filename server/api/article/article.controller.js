@@ -23,9 +23,24 @@ export const create = (req, res, next) => {
 export const remove = (req, res, next) => {
   const {id} = req.params;
 
-  console.log(id);
-
   return articleService.deleteArticle(id)
     .then(() => res.status(200).end())
+    .catch(err => next(err));
+}
+
+export const getOne = (req, res, next) => {
+  const {id} = req.params;
+
+  return articleService.getArticle(id)
+    .then(article => res.json(article))
+    .catch(err => next(err));
+}
+
+export const update = (req, res, next) => {
+  const {id} = req.params;
+  const item = req.body;
+
+  return articleService.update(id, item)
+    .then(article => res.json(article))
     .catch(err => next(err));
 }

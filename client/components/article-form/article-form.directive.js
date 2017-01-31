@@ -4,5 +4,8 @@ angular.module('blog')
       template: require('./article-form.html'),
       controller: 'ArticleFormController',
       controllerAs: 'vm',
+      scope: {
+        article: '@',
+      },
     }
   });

@@ -1,5 +1,5 @@
 <form class="new-article-form" name="newForm">
-  <h2>Create new article</h2>
+  <h2>{{vm.inEditMode ? 'Edit' : 'Create new'}} article</h2>
   <div class="new-article-form-row">
     <div class="new-article-form-row__caption">
       <h3>Title:</h3>
@@ -8,7 +8,7 @@
       <input type="text"
         class="new-article-form-row__content-input"
         ng-class="{'new-article-form-row__content-input_invalid': vm.titleInvalid}"
-        ng-model="vm.title"
+        ng-model="vm.article.title"
         name="title"
         required
       />
@@ -22,7 +22,7 @@
     <div class="new-article-form-row__content">
       <input type="text"
         class="new-article-form-row__content-input"
-        ng-model="vm.image"
+        ng-model="vm.article.image"
       />
     </div>
   </div>
@@ -33,7 +33,7 @@
     </div>
     <div class="new-article-form-row__content">
       <textarea class="new-article-form-row__content-input"
-        ng-model="vm.body"
+        ng-model="vm.article.body"
         ng-required="true"
         ng-class="{'new-article-form-row__content-input_invalid': vm.bodyInvalid}"
         name="body"
@@ -50,10 +50,10 @@
         </div>
       </a>
       <a
-        ng-click="vm.create()"
+        ng-click="vm.submit()"
       >
         <div class="button button_submit">
-          SUBMIT
+          {{vm.inEditMode ? 'UPDATE' : 'CREATE' }}
         </div>
       </a>
     </div>

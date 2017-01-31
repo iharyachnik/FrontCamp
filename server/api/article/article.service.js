@@ -26,6 +26,14 @@ class ArticleService extends BaseService {
   deleteArticle(id) {
     return this.deleteById(id);
   }
+
+  getArticle(id) {
+    return this.getById(id);
+  }
+
+  update(id, item) {
+    return this.updateById(id, item);
+  }
 }
 
 export default new ArticleService(ArticleModel);

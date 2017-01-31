@@ -10,6 +10,7 @@ require('./components/articles/articles.controller');
 
 require('./components/article/article.component');
 require('./components/article/article.controller');
+require('./components/article/edit-article.controller');
 
 require('./components/article-form/article-form.controller');
 require('./components/article-form/article-form.directive');

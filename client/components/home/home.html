@@ -4,6 +4,7 @@
     <li class="home__list-item"
       ng-repeat="title in vm.titles"
       ng-bind="title.title"
+      ui-sref="articles-edit({id: title._id})"
     ></li>
   </ul>
 </div>

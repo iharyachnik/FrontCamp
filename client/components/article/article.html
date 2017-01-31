@@ -9,9 +9,14 @@
       ng-src={{vm.item.image}}
       alt={{vm.item.title}}
     />
-    <h2 class="article-header__title">
-      {{vm.item.title}}
-    </h2>
+    <a 
+      class="article-header__link"
+      ui-sref="articles-edit({id: vm.item._id})"
+    >
+      <h2 class="article-header__title">
+        {{vm.item.title}}
+      </h2>
+    </a>
   </section>
   <section class="article-body">
     <h3 class="article-body__content">

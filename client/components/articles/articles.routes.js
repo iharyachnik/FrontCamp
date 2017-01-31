@@ -10,5 +10,18 @@ angular.module('blog')
       .state('articles-new', {
         url: 'articles/new',
         template: require('../article/new-article.html'),
+      })
+      .state('articles-edit', {
+        url: 'articles/:id/edit',
+        template: require('../article/edit-article.html'),
+        controller: 'EditArticleController',
+        controllerAs: 'vm',
+        resolve: {
+          article: ($stateParams, Articles) => {
+            const {id} = $stateParams;
+
+            return Articles.getById({ id }).$promise;
+          },
+        },
       });
   }]);

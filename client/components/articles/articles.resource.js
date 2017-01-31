@@ -16,5 +16,12 @@ angular.module('blog')
         url: '/api/articles/create',
         method: 'POST',
       },
+      getById: {
+        url: '/api/articles/:id',
+      },
+      update: {
+        url: '/api/articles/:id',
+        method: 'PATCH',
+      }
     });
   }]);

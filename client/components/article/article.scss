@@ -19,6 +19,10 @@ $article-header-cross-padding-size: .5rem;
       margin: 1.5rem 0 1rem;
     }
 
+    &__link {
+      text-decoration: none;
+    }
+
     &__cross {
       position: absolute;
       top: $article-header-cross-padding-size;
