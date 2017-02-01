@@ -7,8 +7,8 @@
     <div class="new-article-form-row__content">
       <input type="text"
         class="new-article-form-row__content-input"
-        ng-class="{'new-article-form-row__content-input_invalid': vm.titleInvalid}"
         ng-model="vm.article.title"
+        min-length="5"
         name="title"
         required
       />
@@ -35,9 +35,8 @@
       <textarea class="new-article-form-row__content-input"
         ng-model="vm.article.body"
         ng-required="true"
-        ng-class="{'new-article-form-row__content-input_invalid': vm.bodyInvalid}"
         name="body"
-        ng-minlength="5"
+        min-length="5"
       ></textarea>
     </div>
   </div>

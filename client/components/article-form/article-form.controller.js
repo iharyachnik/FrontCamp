@@ -24,9 +24,6 @@ angular.module('blog')
 
     this.submit = () => {
       if (!$scope.newForm.$valid) {
-        this.titleInvalid = !$scope.newForm.title.$valid;
-        this.bodyInvalid = !$scope.newForm.body.$valid;
-
         return;
       }
 
