@@ -19,3 +19,5 @@ require('./components/pagination/pagination.component');
 require('./components/pagination/pagination.controller');
 
 require('./components/min-length/min-length.directive');
+
+require('./components/add-button/add-button.component');
