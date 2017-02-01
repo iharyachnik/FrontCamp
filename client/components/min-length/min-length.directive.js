@@ -12,10 +12,10 @@ angular.module('blog')
             angular.element(elem).removeClass('new-article-form-row__content-input_invalid')
           }
 
-          return modelValue.length < min;
+          return modelValue.length >= min;
         };
 
-        ctrl.$parsers.push(minLengthValidator);
+        ctrl.$validators.min = minLengthValidator;
       }
     };
   });

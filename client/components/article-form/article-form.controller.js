@@ -23,6 +23,10 @@ angular.module('blog')
     };
 
     this.submit = () => {
+      if (!$scope.newForm.$valid) {
+        return;
+      }
+
       const {_id: id, title, image, body} = this.article;
 
       if (this.inEditMode) {
