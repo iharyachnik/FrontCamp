@@ -17,3 +17,5 @@ require('./components/article-form/article-form.directive');
 
 require('./components/pagination/pagination.component');
 require('./components/pagination/pagination.controller');
+
+require('./components/min-length/min-length.directive');
