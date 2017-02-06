@@ -1,5 +1,3 @@
-require('./header.scss');
-
 angular.module('blog')
   .controller('HeaderController', function () {
     this.menuItems = [

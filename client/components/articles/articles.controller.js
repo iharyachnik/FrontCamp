@@ -1,5 +1,3 @@
-require('./articles.scss');
-
 angular.module('blog')
   .controller('ArticlesController', ['Articles', function (Articles) {
     this.articles = [];

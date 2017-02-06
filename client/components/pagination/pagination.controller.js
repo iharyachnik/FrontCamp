@@ -1,5 +1,3 @@
-require('./pagination.scss');
-
 angular.module('blog')
   .controller('PaginationController', ['Articles', function (Articles) {
     const pageSize = 5;
