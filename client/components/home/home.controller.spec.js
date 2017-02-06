@@ -1,6 +1,4 @@
 describe('Home component', function () {
-  let createController;
-
   beforeEach(angular.mock.module('blog'));
   beforeEach(angular.mock.inject(function(_$controller_) {
     $controller = _$controller_;
