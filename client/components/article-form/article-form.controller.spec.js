@@ -7,7 +7,7 @@ describe('Articles-Form controller', function () {
     $rootScope = _$rootScope_;
   }));
 
-  it('Should be in edit mode', function () {
+  it('Should not be in edit mode', function () {
     const scope = $rootScope.$new();
 
     scope.article = null;
