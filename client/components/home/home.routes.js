@@ -6,5 +6,8 @@ angular.module('blog')
         template: require('./home.html'),
         controller: 'HomeController',
         controllerAs: 'vm',
+        resolve: {
+          articleTitles: (Articles) => Articles.getTitles().$promise,
+        }
       });
   }]);

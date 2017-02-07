@@ -1,5 +1,3 @@
-require('./article-form.scss');
-
 angular.module('blog')
   .controller('ArticleFormController', ['Articles', '$scope', '$state', function (Articles, $scope, $state) {
     const defaultArticle = {

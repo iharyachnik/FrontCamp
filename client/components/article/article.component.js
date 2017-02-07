@@ -1,5 +1,3 @@
-require('./article.scss');
-
 angular.module('blog')
   .component('singleArticle', {
     template: require('./article.html'),

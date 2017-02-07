@@ -11,9 +11,7 @@ const sassLoaders = [
 ]
 
 module.exports = {
-  entry: {
-    app: ['./app.js', './components.js'],
-  },
+  entry: ['./modules.js', './app.js', './components.js', './main.scss'],
   output: {
     path: __dirname + '/dist',
     filename: "[name].js",
