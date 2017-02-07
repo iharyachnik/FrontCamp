@@ -1,7 +1,7 @@
 <div class="paginator">
   <a href="#"
     class="paginator__link"
-    ng-repeat="page in vm.pages"
+    ng-repeat="page in (vm.count|paginator:vm.pageSize)"
     ng-click="vm.go(page)"
   >
     {{page}}
